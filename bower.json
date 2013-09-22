@@ -10,8 +10,5 @@
     "underscore-amd": "~1.5.2",
     "snapjs": "*"
   },
-  "devDependencies": {},
-  "resolutions": {
-    "jquery": "~2.0.3"
-  }
+  "devDependencies": {}
 }
