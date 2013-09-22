@@ -1,0 +1,49 @@
+// this is used when you want to do image replacement of text and use a high-def
+// retina image. A good example of this is the site header logo
+@mixin retina-sprite-replace-text-with-dimensions($map, $sprite, $offset-x: 0, $offset-y: 0) {
+  @include retina-sprite-replace-text($map, $sprite, true, $offset-x, $offset-y);
+}
+
+// this is used when you want to do image replacement of text and use a high-def
+// retina image. no dimensions on this one
+@mixin retina-sprite-replace-text($map, $sprite, $dimensions: false, $offset-x: 0, $offset-y: 0) {
+  @include sprite-replace-text($map, $sprite, $dimensions, $offset-x, $offset-y);
+  @include background-size(ceil(image-width(sprite-path($map)) / 2) auto);
+
+  $ypos: nth(sprite-position($map, $sprite), 2) / 2;
+  background-position: 0 $ypos;
+
+  @if $dimensions {
+    $calculated-width: ceil(image-width(sprite-file($map, $sprite)) / 2);
+    $calculated-height: ceil(image-height(sprite-file($map, $sprite)) / 2);
+
+    width: $calculated-width;
+    height: $calculated-height;
+  }
+}
+
+@mixin retina-replace-text-with-dimensions($img, $x: 50%, $y: 50%) {
+  @include retina-replace-text($img, $x, $y);
+  width: ceil(image-width($img) / 2);
+  height: ceil(image-height($img) / 2);
+}
+@mixin retina-replace-text($img, $x: 50%, $y: 50%) {
+  @include hide-text;
+  background: {
+    image: image-url($img);
+    repeat: no-repeat;
+    position: $x $y;
+  };
+
+  @include background-size(ceil(image-width($img) / 2) auto);
+}
+
+@mixin retina-background($img, $color: transparent, $repeat: no-repeat, $position: top center) {
+  background: {
+    color: $color;
+    image: image-url($img);
+    repeat: $repeat;
+    position: $position;
+  };
+  @include background-size(ceil(image-width($img) / 2) auto);
+}

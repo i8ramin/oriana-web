@@ -1,5 +1,6 @@
 require.config({
     paths: {
+        underscore: '../bower_components/underscore-amd/underscore',
         jquery: '../bower_components/jquery/jquery',
         bootstrapAffix: '../bower_components/sass-bootstrap/js/affix',
         bootstrapAlert: '../bower_components/sass-bootstrap/js/alert',
@@ -12,8 +13,8 @@ require.config({
         bootstrapTab: '../bower_components/sass-bootstrap/js/tab',
         bootstrapTooltip: '../bower_components/sass-bootstrap/js/tooltip',
         bootstrapTransition: '../bower_components/sass-bootstrap/js/transition',
-        requirejs: '../bower_components/requirejs/require',
-        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap'
+        intention: '../bower_components/intentionjs/intention',
+        context: '../bower_components/intentionjs/context'
     },
     shim: {
         bootstrapAffix: {
@@ -74,8 +75,9 @@ require.config({
     }
 });
 
-require(['app', 'jquery'], function (app, $) {
+require(['app', 'underscore', 'jquery', 'context'], function (app, _, $, context) {
     'use strict';
+
     // use app here
     console.log(app);
     console.log('Running jQuery %s', $().jquery);

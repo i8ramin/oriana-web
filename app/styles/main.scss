@@ -1,91 +1,67 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+@import 'base';
 
+@import 'fonts';
 @import 'sass-bootstrap/lib/bootstrap';
+@import 'bootstrap-overrides';
 
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.site-logo {
+  a {
+    display: block;
+    @include retina-sprite-replace-text-with-dimensions($site, logo);
+  }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+.landing-page.jumbotron {
+  position: relative;
+  background: transparent image-url('landing@2x.jpg') no-repeat top center;
+  background-size: cover;
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
+  &, a {
+    color: white;
+  }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
+  .header {
+    .login-link {
+      text-transform: uppercase;
+      font-size: 10pt;
+    }
+  }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
+  .call-to-action {
+    clear: left;
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+
+    h2 {
+      margin: 100px 0 50px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .btn {
+      margin: 0 15px;
+    }
+  }
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
 .marketing {
-    margin: 40px 0;
-}
+  text-align: center;
 
-.marketing p + h4 {
-    margin-top: 28px;
+  h2 {
+    margin-bottom: 50px;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
+  .landing-page {
+    min-height: 750px;
+  }
 
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
 }

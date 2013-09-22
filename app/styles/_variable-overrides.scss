@@ -1,0 +1,56 @@
+//
+// Variables
+// --------------------------------------------------
+
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+// Global values
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+$gray-darker:            lighten(#000, 12.5%); // #202020
+$gray-dark:              lighten(#000, 20%);   // #333
+$gray:                   lighten(#000, 33.5%); // #555
+$gray-light:             lighten(#000, 60%);   // #999
+$gray-lighter:           lighten(#000, 96%);   // #f4f4f4 (whitesmoke)
+
+// Brand colors
+// -------------------------
+$brand-primary:         #717b7d !default;
+$brand-accent:          #4f585a !default;
+$brand-success:         #f46800 !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+$brand-info:            #5bc0de !default;
+
+
+// Buttons
+// -------------------------
+$btn-default-color:              #fff;
+$btn-default-bg:                 $brand-accent;
+$btn-default-border:             darken($btn-default-bg, 5%);
+
+
+// Typography
+// -------------------------
+$font-family-sans-serif:  'Proximanova', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-size-base:          10pt;
+$font-size-large:         ceil($font-size-base * 1.25);
+$font-size-small:         ceil($font-size-base * 0.75);
+
+// Components
+// -------------------------
+// Based on 14px font-size and 1.428 line-height (~20px to start)
+$border-radius-base:    0;
+$border-radius-large:   0;
+$border-radius-small:   0;
+
+$padding-base-vertical:    12px;
+$padding-base-horizontal:  24px;
+
+$padding-large-vertical:   15px;
+$padding-large-horizontal: 30px;
+
+$padding-small-vertical:   10px;
+$padding-small-horizontal: 20px;
