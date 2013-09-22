@@ -1,8 +1,15 @@
 @import 'base';
 
 @import 'fonts';
-@import 'sass-bootstrap/lib/bootstrap';
 @import 'bootstrap-overrides';
+@import 'sass-bootstrap/lib/bootstrap';
+
+@import 'snap';
+@import 'theme';
+
+#content {
+  background-color: white;
+}
 
 .browsehappy {
   margin: 0.2em 0;
@@ -14,54 +21,136 @@
 .site-logo {
   a {
     display: block;
-    @include retina-sprite-replace-text-with-dimensions($site, logo);
+    @include retina-sprite-replace-text-with-dimensions($site, logo-mobile);
   }
 }
 
-.landing-page.jumbotron {
-  position: relative;
-  background: transparent image-url('landing@2x.jpg') no-repeat top center;
-  background-size: cover;
-
-  &, a {
-    color: white;
-  }
-
-  .header {
-    .login-link {
-      text-transform: uppercase;
-      font-size: 10pt;
-    }
-  }
-
-  .call-to-action {
-    clear: left;
+.landing-page {
+  .jumbotron {
+    position: relative;
+    background: transparent image-url('landing-mobile@2x.jpg') no-repeat center;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15px;
+    margin-bottom: 0;
     text-align: center;
 
-    h2 {
-      margin: 100px 0 50px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+    &, a {
+      color: white;
     }
 
-    .btn {
-      margin: 0 15px;
+    .header {
+      overflow: hidden;
+
+      .login-link {
+        text-transform: uppercase;
+        font-size: 10pt;
+      }
     }
+
+    .call-to-action {
+      clear: left;
+      margin-top: 20px;
+
+      h2 {
+        margin: 0 0 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 13pt;
+        line-height: 1.2;
+        @include text-shadow(1px 1px 1px rgba(0,0,0,.2));
+      }
+
+      .btn {
+        margin: 0 15px 10px;
+        min-width: 170px;
+      }
+    }
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .marketing {
+    padding: 30px 0;
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 18pt;
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
+  }
+
+  .preview {
+    background-color: $gray-light;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 20px;
+    border-radius: 10px 10px 0 0;
+    height: 175px;
+    margin: 40px 0 0;
+    overflow: hidden;
+  }
+
+  #preview-1 {
+    background-image: image-url('preview-01.jpg');
   }
 }
 
-.marketing {
-  text-align: center;
-
-  h2 {
-    margin-bottom: 50px;
-  }
+.scrollable {
+  overflow: auto;
+  -webkit-transition-property: top, bottom;
+  transition-property: top, bottom;
+  -webkit-transition-duration: .2s, .2s;
+  transition-duration: .2s, .2s;
+  -webkit-transition-timing-function: linear, linear;
+  transition-timing-function: linear, linear;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .landing-page {
-    min-height: 750px;
+  .site-logo {
+    a {
+      @include retina-sprite-replace-text-with-dimensions($site, logo);
+    }
   }
 
+  .landing-page {
+    .jumbotron {
+      min-height: 760px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 40px;
+      background-image: image-url('landing@2x.jpg');
+      background-position: top center;
+
+      .call-to-action {
+        h2 {
+          margin: 100px 0 50px;
+          letter-spacing: 3px;
+          font-size: 22pt;
+        }
+
+        .btn {
+          margin: 0 15px;
+        }
+      }
+    }
+
+    .marketing {
+      h2 {
+        font-size: 30pt;
+      }
+    }
+
+    .preview {
+      clear: left;
+      height: 650px;
+      background-position: 0 40px;
+    }
+  }
 }

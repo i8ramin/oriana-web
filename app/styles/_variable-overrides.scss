@@ -10,34 +10,37 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 // Grays
 // -------------------------
 $gray-darker:            lighten(#000, 12.5%); // #202020
-$gray-dark:              lighten(#000, 20%);   // #333
+$gray-dark:              #313435;
 $gray:                   lighten(#000, 33.5%); // #555
-$gray-light:             lighten(#000, 60%);   // #999
+$gray-light:             #d1d8da;
 $gray-lighter:           lighten(#000, 96%);   // #f4f4f4 (whitesmoke)
 
 // Brand colors
 // -------------------------
-$brand-primary:         #717b7d !default;
-$brand-accent:          #4f585a !default;
-$brand-success:         #f46800 !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-$brand-info:            #5bc0de !default;
+$brand-primary:         #717b7d;
+$brand-accent:          #4f585a;
+$brand-success:         #f46800;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-info:            #5bc0de;
+
+
+// Scaffolding
+// -------------------------
+$body-bg:               #fff;
+$text-color:            $gray-dark;
 
 
 // Buttons
 // -------------------------
 $btn-default-color:              #fff;
-$btn-default-bg:                 $brand-accent;
+$btn-default-bg:                 $gray-dark;
 $btn-default-border:             darken($btn-default-bg, 5%);
 
 
 // Typography
 // -------------------------
 $font-family-sans-serif:  'Proximanova', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
-$font-size-base:          10pt;
-$font-size-large:         ceil($font-size-base * 1.25);
-$font-size-small:         ceil($font-size-base * 0.75);
 
 // Components
 // -------------------------
@@ -54,3 +57,9 @@ $padding-large-horizontal: 30px;
 
 $padding-small-vertical:   10px;
 $padding-small-horizontal: 20px;
+
+
+// Grid system
+// --------------------------------------------------
+// Padding, to be divided by two and applied to the left and right of all columns
+$grid-gutter-width:         40px;

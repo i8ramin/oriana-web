@@ -4,4 +4,4 @@
 @import 'mixins';
 @import 'variable-overrides';
 
-$site: sprite-map('site/*.png');
+$site: sprite-map('site/*.png', $spacing: 15px);
